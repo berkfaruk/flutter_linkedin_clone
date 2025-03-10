@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkedin_clone/pages/onboarding/on_boarding_page.dart';
 import 'package:flutter_linkedin_clone/pages/splash/splash_page.dart';
 
 void main(List<String> args) {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashPage(),
+      home: SplashPage(child: OnBoardingPage()),
     );
   }
 }

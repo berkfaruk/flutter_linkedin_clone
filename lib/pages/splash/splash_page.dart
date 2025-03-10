@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkedin_clone/theme/styles.dart';
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({super.key});
+  final Widget child;
+  const SplashPage({super.key, required this.child});
 
   @override
   State<SplashPage> createState() => _SplashPageState();
@@ -9,7 +11,25 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   @override
+  void initState() {
+    Future.delayed(const Duration(milliseconds: 3000)).then((value) {
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (context) => widget.child,
+          ),
+          (route) => false);
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: linkedInWhiteFFFFFF,
+      body: Center(
+        child: Image.asset("assets/app_logo.png"),
+      ),
+    );
   }
 }
